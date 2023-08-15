@@ -1,3 +1,6 @@
 [submodule "external/referral"]
 	path = external/referral
 	url = ../referral.git
+[submodule "external/dzr-plays"]
+	path = external/dzr-plays
+	url = ../dzr-plays
