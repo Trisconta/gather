@@ -4,3 +4,6 @@
 [submodule "external/dzr-plays"]
 	path = external/dzr-plays
 	url = ../dzr-plays.git
+[submodule "external/dzdb"]
+	path = external/dzdb
+	url = ../dzdb.git
