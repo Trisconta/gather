@@ -7,3 +7,9 @@
 [submodule "external/dzdb"]
 	path = external/dzdb
 	url = ../dzdb.git
+[submodule "external/jadata-samples"]
+	path = external/jadata-samples
+	url = ../jadata-samples.git
+[submodule "external/dz-artist"]
+	path = external/dz-artist
+	url = ../dz-artist.git
