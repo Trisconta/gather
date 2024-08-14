@@ -13,3 +13,6 @@
 [submodule "external/dz-artist"]
 	path = external/dz-artist
 	url = ../dz-artist.git
+[submodule "external/dztxt-data"]
+	path = external/dztxt-data
+	url = ../dztxt-data
