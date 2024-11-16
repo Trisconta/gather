@@ -15,4 +15,4 @@
 	url = ../dz-artist.git
 [submodule "external/dztxt-data"]
 	path = external/dztxt-data
-	url = ../dztxt-data
+	url = ../dztxt-data.git
