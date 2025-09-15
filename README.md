@@ -1,5 +1,7 @@
 # gather
 - Gathers several music and playlist related scripts and database(s)
+- Upload textual playlists to server:
+  + `(cd ../gather/external/jadata-samples && ./upload_playlists.sh)`
 
 
 ## dzr-plays

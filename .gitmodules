@@ -16,3 +16,6 @@
 [submodule "external/dztxt-data"]
 	path = external/dztxt-data
 	url = ../dztxt-data.git
+[submodule "external/jad-links"]
+	path = external/jad-links
+	url = ../jad-links.git
