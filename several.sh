@@ -14,12 +14,15 @@ filter_out ()
  local X
  for X in raw-*.txt; do
 	diff $X external/dzr-plays/lists/
-	[ $? = 0 ] && continue
+	if [ $? = 0 ]; then
+		rm -f "$X"
+		continue
+	fi
 	echo "+++
 "
 	mv $X external/dzr-plays/lists/
  done
- rm -f rep.out.* plays.txt
+ rm -f out.rep out.rep.* plays.txt
  return 0
 }
 
@@ -29,7 +32,13 @@ filter_out ()
 
 [ "$(basename $(pwd))" != "gather" ] && failed 2 "Not at propper dir!"
 
-external/dzr-plays/lists/update_raws.sh
+case $1 in
+	--skip)
+		shift
+		[ "$*" ] && failed 3 Invalid
+		echo Skipped: update_raws.sh;;
+	*) external/dzr-plays/lists/update_raws.sh;;
+esac
 
 filter_out
 
