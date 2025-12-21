@@ -1,6 +1,18 @@
 #!/bin/bash
 
 
+usage ()
+{
+ echo "$0 [--skip]
+
+Uploads playlists to server.
+
+Use --skip to skip download of playlists.
+"
+ failed 0 "(Use appropriate parameters, or none)"
+}
+
+
 failed ()
 {
  local RES=$1
@@ -33,6 +45,8 @@ filter_out ()
 [ "$(basename $(pwd))" != "gather" ] && failed 2 "Not at propper dir!"
 
 case $1 in
+	-h|--help)
+		usage;;
 	--skip)
 		shift
 		[ "$*" ] && failed 3 Invalid
