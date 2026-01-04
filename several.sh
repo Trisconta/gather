@@ -25,6 +25,7 @@ filter_out ()
 {
  local X
  for X in raw-*.txt; do
+	[ "$X" = "raw-*.txt" ] && continue	# or shopt -s nullglob
 	diff $X external/dzr-plays/lists/
 	if [ $? = 0 ]; then
 		rm -f "$X"
