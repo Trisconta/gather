@@ -1,0 +1,319 @@
+henrique@pino:~/anaceo/Trisconta/wsound/gather> python3 -m pdb external/jadata-samples/reader_sample.py
+> .../gather/external/jadata-samples/reader_sample.py(3)<module>()
+-> """ Sampling artists, examples
+(Pdb) b samples
+Breakpoint 1 at .../gather/external/jadata-samples/reader_sample.py:12
+(Pdb) step
+> .../gather/external/jadata-samples/reader_sample.py(8)<module>()
+-> from bs4 import BeautifulSoup        # HTML Parsing
+(Pdb) s
+--Call--
+> <frozen importlib._bootstrap>(1390)_handle_fromlist()
+(Pdb) n
+> <frozen importlib._bootstrap>(1400)_handle_fromlist()
+(Pdb)
+> <frozen importlib._bootstrap>(1401)_handle_fromlist()
+(Pdb)
+> <frozen importlib._bootstrap>(1408)_handle_fromlist()
+(Pdb)
+> <frozen importlib._bootstrap>(1412)_handle_fromlist()
+(Pdb)
+> <frozen importlib._bootstrap>(1400)_handle_fromlist()
+(Pdb)
+> <frozen importlib._bootstrap>(1424)_handle_fromlist()
+(Pdb)
+--Return--
+> <frozen importlib._bootstrap>(1424)_handle_fromlist()-><module 'bs4'.../__init__.py'>
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(9)<module>()
+-> import jadata
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(10)<module>()
+-> from jadata.dzf import AnyPage
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(12)<module>()
+-> def samples():
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(16)<module>()
+-> def sample1():
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(23)<module>()
+-> def check_method1(page):
+(Pdb) step
+> .../gather/external/jadata-samples/reader_sample.py(46)<module>()
+-> def check_method2(page):
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(77)<module>()
+-> samples()
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(14)samples()
+-> sample1()
+(Pdb)
+::: https://www.deezer.com/en/artist/1981 is: {'Name': 'The Police', 'UID': 1981}
+# idx: 1 {'property': ['fb:app_id'], 'content': ['241284008322']}
+# idx: 2 {'property': ['og:site_name'], 'content': ['Deezer']}
+# idx: 3 {'property': ['og:title'], 'content': ['The Police']}
+# idx: 4 {'property': ['og:type'], 'content': ['music.musician']}
+# idx: 5 {'property': ['og:url'], 'content': ['https://www.deezer.com/en/artist/1981']}
+# idx: 6 {'property': ['og:image'], 'content': ['https://cdn-images.dzcdn.net/images/artist/5b4796f1d81da41fa45db0eda8d51b04/500x500.jpg']}
+# idx: 7 {'property': ['og:description'], 'content': ['All top songs, albums, playlists']}
+# idx: 8 {'property': ['og:audio'], 'content': ['https://cdnt-preview.dzcdn.net/api/1/1/f/6/4/0/f64bec38146590bbfa345352446d5f52.mp3?hdnea=exp=1767564543~acl=/api/1/1/f/6/4/0/f64bec38146590bbfa345352446d5f52.mp3*~data=user_id=0,application_id=42~hmac=59b0d256c2d26d3a33cd3de3880a23194f2af73dbfdf906add86aebfaf59b1c9']}
+# idx: 9 {'property': ['og:audio:type'], 'content': ['audio/vnd.facebook.bridge']}
+# idx: 10 {'property': ['al:ios:app_name'], 'content': ['Deezer']}
+# idx: 11 {'property': ['al:ios:app_store_id'], 'content': ['292738169']}
+# idx: 12 {'property': ['al:ios:url'], 'content': ['deezer://www.deezer.com/artist/1981']}
+# idx: 13 {'property': ['al:android:app_name'], 'content': ['Deezer']}
+# idx: 14 {'property': ['al:android:package'], 'content': ['deezer.android.app']}
+# idx: 15 {'property': ['al:android:url'], 'content': ['deezer://www.deezer.com/artist/1981']}
+--Return--
+> .../gather/external/jadata-samples/reader_sample.py(14)samples()->None
+-> sample1()
+(Pdb) b sample1
+Breakpoint 2 at .../gather/external/jadata-samples/reader_sample.py:18
+(Pdb) run
+Restarting .../gather/external/jadata-samples/reader_sample.py with arguments:
+
+The program finished and will be restarted
+> .../gather/external/jadata-samples/reader_sample.py(3)<module>()
+-> """ Sampling artists, examples
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(8)<module>()
+-> from bs4 import BeautifulSoup        # HTML Parsing
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(9)<module>()
+-> import jadata
+(Pdb) cont
+> .../gather/external/jadata-samples/reader_sample.py(14)samples()
+-> sample1()
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(18)sample1()
+-> page = AnyPage(name="abc")
+(Pdb) step
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(55)__init__()
+-> def __init__(self, c_dir:str="", name="dzf.anypage"):
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(56)__init__()
+-> super().__init__(c_dir, name)
+(Pdb)
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(23)__init__()
+-> def __init__(self, c_dir:str="", name="dzf.getter"):
+(Pdb) s
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(24)__init__()
+-> self.name = name
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(25)__init__()
+-> self._base_url = "https://www.deezer.com/en/"
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(26)__init__()
+-> self._cache_dir = c_dir if c_dir else "/tmp"
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(27)__init__()
+-> self._a_id, self._cont = 0, None
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(27)__init__()->None
+-> self._a_id, self._cont = 0, None
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(57)__init__()
+-> self._suffixes = jadata.initdata.URL_SUFFIX
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(58)__init__()
+-> self._s_id = ""
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(58)__init__()->None
+-> self._s_id = ""
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(19)sample1()
+-> assert page.name == "abc", "Name?"
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(20)sample1()
+-> is_ok, _ = check_method2(page)
+(Pdb)
+--Call--
+> .../gather/external/jadata-samples/reader_sample.py(46)check_method2()
+-> def check_method2(page):
+(Pdb)
+> .../gather/external/jadata-samples/reader_sample.py(48)check_method2()
+-> kind, s_id = "S", "1981"
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(49)check_method2()
+-> cont = page.wrap(kind, s_id)
+(Pdb) step
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(69)wrap()
+-> def wrap(self, kind:str, s_id:str):
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(70)wrap()
+-> resp = self.get(kind, s_id)
+(Pdb) step
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(60)get()
+-> def get(self, kind:str, s_id:str):
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(62)get()
+-> tup = self._suffixes[kind]
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(63)get()
+-> u_tail = tup[0]
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(64)get()
+-> s_url = f"{self._base_url}{u_tail}/{s_id}"
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(66)get()
+-> response = self.get_html(s_url)
+(Pdb) step
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(43)get_html()
+-> def get_html(self, url:str):
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(44)get_html()
+-> rsp = http_get(url, timeout=60)
+(Pdb) step
+--Call--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/interfaces.py(10)http_get()
+-> def http_get(url:str, timeout=60):
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/interfaces.py(12)http_get()
+-> hdr =  {'Content-type': 'text/plain; charset=iso-8859-1'}
+(Pdb) step
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/interfaces.py(13)http_get()
+-> response = requests.get(url, headers=hdr, timeout=60)
+(Pdb) next
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/interfaces.py(14)http_get()
+-> return response
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/interfaces.py(14)http_get()-><Response [200]>
+-> return response
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(45)get_html()
+-> return rsp
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(45)get_html()-><Response [200]>
+-> return rsp
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(67)get()
+-> return u_tail, s_url, response
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(67)get()->('artist', 'https://www....n/artist/1981', <Response [200]>)
+-> return u_tail, s_url, response
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(71)wrap()
+-> tbl, _, response = resp
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(72)wrap()
+-> assert tbl, "Empty table name"
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(73)wrap()
+-> astr = response.content.decode("utf-8")
+(Pdb) print tbl
+*** SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+(Pdb) print(tbl)
+artist
+(Pdb) print(dir(tbl))
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+(Pdb) next
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(74)wrap()
+-> soup = BeautifulSoup(astr, 'html.parser')
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(75)wrap()
+-> cont = HContent(astr, kind, s_id, soup)
+(Pdb)
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(76)wrap()
+-> return cont
+(Pdb)
+--Return--
+> /home/henrique/git_repos/anaceo/Trisconta/wsound/gather/external/dzdb/src/jadata/dzf.py(76)wrap()-><jadata.dzf.H...x7ff2bed17390>
+-> return cont
+(Pdb)
+--Call--
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1121)closed()
+-> @property
+(Pdb)
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1123)closed()
+-> if not self.auto_close:
+(Pdb)
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1125)closed()
+-> elif self._fp is None:
+(Pdb) next
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1127)closed()
+-> elif hasattr(self._fp, "isclosed"):
+(Pdb) next
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1128)closed()
+-> return self._fp.isclosed()
+(Pdb) next
+--Return--
+> /usr/lib/python3.13/site-packages/urllib3/response.py(1128)closed()->True
+-> return self._fp.isclosed()
+(Pdb) next
+--Call--
+> /usr/lib64/python3.13/weakref.py(585)__call__()
+-> def __call__(self, _=None):
+(Pdb) next
+> /usr/lib64/python3.13/weakref.py(588)__call__()
+-> info = self._registry.pop(self, None)
+(Pdb) next
+> /usr/lib64/python3.13/weakref.py(589)__call__()
+-> if info and not self._shutdown:
+(Pdb) next
+> /usr/lib64/python3.13/weakref.py(590)__call__()
+-> return info.func(*info.args, **(info.kwargs or {}))
+(Pdb) next
+--Return--
+> /usr/lib64/python3.13/weakref.py(590)__call__()->None
+-> return info.func(*info.args, **(info.kwargs or {}))
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(50)check_method2()
+-> url = f"https://www.deezer.com/en/artist/{s_id}"
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(51)check_method2()
+-> is_ok = cont.parse()
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(52)check_method2()
+-> assert is_ok, s_id
+(Pdb) print(is_ok)
+True
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(53)check_method2()
+-> print(f"::: {url} is: {cont.item}")
+(Pdb) next
+::: https://www.deezer.com/en/artist/1981 is: {'Name': 'The Police', 'UID': 1981}
+> .../gather/external/jadata-samples/reader_sample.py(54)check_method2()
+-> metas, seq = cont.get_metas()
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(55)check_method2()
+-> for idx, meta in enumerate(seq, 1):
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(56)check_method2()
+-> print("# idx:", idx, meta)
+(Pdb) next
+# idx: 1 {'property': ['fb:app_id'], 'content': ['241284008322']}
+> .../gather/external/jadata-samples/reader_sample.py(55)check_method2()
+-> for idx, meta in enumerate(seq, 1):
+(Pdb) next
+> .../gather/external/jadata-samples/reader_sample.py(56)check_method2()
+-> print("# idx:", idx, meta)
+(Pdb) cont
+# idx: 2 {'property': ['og:site_name'], 'content': ['Deezer']}
+# idx: 3 {'property': ['og:title'], 'content': ['The Police']}
+# idx: 4 {'property': ['og:type'], 'content': ['music.musician']}
+# idx: 5 {'property': ['og:url'], 'content': ['https://www.deezer.com/en/artist/1981']}
+# idx: 6 {'property': ['og:image'], 'content': ['https://cdn-images.dzcdn.net/images/artist/5b4796f1d81da41fa45db0eda8d51b04/500x500.jpg']}
+# idx: 7 {'property': ['og:description'], 'content': ['All top songs, albums, playlists']}
+# idx: 8 {'property': ['og:audio'], 'content': ['https://cdnt-preview.dzcdn.net/api/1/1/f/6/4/0/f64bec38146590bbfa345352446d5f52.mp3?hdnea=exp=1767564653~acl=/api/1/1/f/6/4/0/f64bec38146590bbfa345352446d5f52.mp3*~data=user_id=0,application_id=42~hmac=b1acbb147d28e9a2d0f7c5ab8ce06dc9fef4532185b1df3340561f954ece02ba']}
+# idx: 9 {'property': ['og:audio:type'], 'content': ['audio/vnd.facebook.bridge']}
+# idx: 10 {'property': ['al:ios:app_name'], 'content': ['Deezer']}
+# idx: 11 {'property': ['al:ios:app_store_id'], 'content': ['292738169']}
+# idx: 12 {'property': ['al:ios:url'], 'content': ['deezer://www.deezer.com/artist/1981']}
+# idx: 13 {'property': ['al:android:app_name'], 'content': ['Deezer']}
+# idx: 14 {'property': ['al:android:package'], 'content': ['deezer.android.app']}
+# idx: 15 {'property': ['al:android:url'], 'content': ['deezer://www.deezer.com/artist/1981']}
+The program finished and will be restarted
+> .../gather/external/jadata-samples/reader_sample.py(3)<module>()
+-> """ Sampling artists, examples
+(Pdb) quit
