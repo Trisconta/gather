@@ -1,7 +1,32 @@
 # gather
 - Gathers several music and playlist related scripts and database(s)
-- Upload textual playlists to server:
-  + `(cd ../gather/external/jadata-samples && ./upload_playlists.sh)`
+
+Structure, in a nutshell:
+```text
+gather/
+  +-- external/
+  |     +-- dztxt-data
+  |     +-- dzr-plays
+  +-- scripts/
+  +-- README.md
+```
+Hint:
+- Use a simple native linux command to obtain a more detailed tree, as follow:
+  * `find . -type d | sed 's/[^-][^\/]*\//  |/g;s/|\([^ ]\)/|-- \1/'`
+  * Although `referral` from _Trisconta_ is a submodule referred here (at `gather), it is not referenced in this README, as it is orthogonal to the remaining modules/ submodule.
+
+## Getting updates done in a nutshell
+If `raw-*` text files are up to date, which is usually the case, do:
+1. `(cd ~/anaceo/Trisconta/wsound/gather; ./update_dzdb.sh)`
+1. `(cd ~/anaceo/Trisconta/wsound/gather; ./several.sh --skip)`
+   + The first updates `external/dztxt-data`
+     * Hint: list latest changes using `lsa -v external/dztxt-data`
+   + The latter creates `/tmp/playlists.html` and uploads it into the server
+     * Hint: using `jadata-samples` script `upload_playlists.sh`
+
+If you want just to upload the latest playlists without a database update,
+1. Upload textual playlists to server:
+   + `(cd ../gather/external/jadata-samples && ./upload_playlists.sh)`
 
 
 ## dzr-plays
@@ -69,3 +94,11 @@ for idx in rpl.by_index():
     dct = lst[0] if lst else None
     print(idx, f'{dct["TMainArtist"]} / {dct["Title"]}' if dct else trip)
 ```
+
+## About dztxt-data
+Textual database with records of DZR online.
+
+### Updating dztxt-data
+A quick way to update said `dztxt-data` (which has its own repo) is to run `update_dzdb.sh` bash script at **gather** repo/ directory.
+After a successful run, you should be able to see which new tracks have been added to the database. Example:
+1. `henrique@pino:~/anaceo/Trisconta/wsound/gather/external/dztxt-data> git diff | grep ^+ | grep get_names.sh.--get-t`
