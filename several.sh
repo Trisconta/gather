@@ -51,7 +51,14 @@ case $1 in
 	--skip)
 		shift
 		[ "$*" ] && failed 3 Invalid
-		echo Skipped: update_raws.sh;;
+		echo Skipped: update_raws.sh
+		;;
+	--latest)
+		shift
+		[ "$*" ] && failed 3 Invalid
+		echo Only latest: ; external/dzr-plays/lists/latest.sh
+		echo "Latest gathered: $(date -R)"
+		;;
 	*) external/dzr-plays/lists/update_raws.sh;;
 esac
 
