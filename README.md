@@ -1,4 +1,5 @@
 # gather
+
 - Gathers several music and playlist related scripts and database(s)
 
 Structure, in a nutshell:
@@ -16,6 +17,7 @@ Hint:
   * Although `referral` from _Trisconta_ is a submodule referred here (at `gather), it is not referenced in this README, as it is orthogonal to the remaining modules/ submodule.
 
 ## Getting updates done in a nutshell
+
 If `raw-*` text files are up to date, which is usually the case, do:
 1. `(cd ~/anaceo/Trisconta/wsound/gather; ./update_dzdb.sh)`
 1. `(cd ~/anaceo/Trisconta/wsound/gather; ./several.sh --skip)`
@@ -30,16 +32,19 @@ If you want just to upload the latest playlists without a database update,
 
 
 ## dzr-plays
+
 My own playlists.
 
 
 ## dzdb
+
 Repository sources:
 + https://github.com/trisconta/dzdb
 + Currently private
 
 ### Quick dive
-```
+
+```python
 from jadata import dzdata
 
 zdat = dzdata.ZData("/home/henrique/anaceo/Trisconta/wsound/gather/external/dztxt-data")
@@ -65,7 +70,8 @@ assert '+'.join(sorted(first, key=str.lower)) == 'Desc+Dur+Title+TMainArtist+tra
 ```
 
 ### Dive on Playlist Database (dztxt-data)
-```
+
+```python
 import os, jadata.dzall
 b_dir = os.environ.get("HREPO", os.environ["HOME"])
 dza = jadata.dzall.DAll(os.path.join(b_dir, "Trisconta/wsound/gather/external/dzr-plays/lists"))
@@ -96,9 +102,28 @@ for idx in rpl.by_index():
 ```
 
 ## About dztxt-data
+
 Textual database with records of DZR online.
 
 ### Updating dztxt-data
+
 A quick way to update said `dztxt-data` (which has its own repo) is to run `update_dzdb.sh` bash script at **gather** repo/ directory.
 After a successful run, you should be able to see which new tracks have been added to the database. Example:
 1. `henrique@pino:~/anaceo/Trisconta/wsound/gather/external/dztxt-data> git diff | grep ^+ | grep get_names.sh.--get-t`
+
+### Steps and Script on dztxt-data
+
+```bash
+./steps.sh
+export LOG=NO; ./script.sh
+```
+_Steps_ script walks on every 'track' and collects information for the corresponding album and tracks, and updates said _Script_.
+It is _Script_ that goes online and fetch track information (by using `getter.py` Python script itself).
+By using `LOG=NO`, the appended log file `/tmp/.get_names.log` will contain the _getter.py_ information (there is an intermedia script `get_names.sh` that handles the _getter.py_ call).
+
+By doing the following you will be able to see the offending tracks that are no longer mapped at the original DZR site.
+```bash
+grep Page.not.found /tmp/.get_names.log  | sed 's/.*T., //;s/): No regexp.*/@/' | g -v Error:
+```
+
+Procedures and description on fixing changed tracks by DZR is at `external/referral/broken/sample_001.md`.
